@@ -10,7 +10,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   int currentTabIndex = 0;
   List<Widget> pages;
   Widget currentPage;
@@ -36,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentTabIndex,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             currentTabIndex = index;
             currentPage = pages[index];
@@ -45,9 +44,12 @@ class _MainScreenState extends State<MainScreen> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text('Orders')),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('Favorite')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Profile')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), title: Text('Orders')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), title: Text('Favorite')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), title: Text('Profile')),
         ],
       ),
       body: currentPage,
